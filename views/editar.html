@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block title %}
+Editar Mascota
+{% endblock %}
+
+{% block content %}
+
+<form method="POST" action="/guardar_edicion/{{ mascota.id }}">
+
+    <label>Nombre</label><br>
+    <input
+        type="text"
+        name="nombre_mascota"
+        value="{{ mascota.nombre_mascota }}"
+        required
+    ><br><br>
+
+    <label>Observaciones</label><br>
+    <textarea
+        name="observaciones"
+        required
+    >{{ mascota.observaciones }}</textarea><br><br>
+
+    <label>Teléfono</label><br>
+    <input
+        type="text"
+        name="telefono_contacto"
+        value="{{ mascota.telefono_contacto }}"
+        required
+    ><br><br>
+
+    <label>Email</label><br>
+    <input
+        type="email"
+        name="email_contacto"
+        value="{{ mascota.email_contacto }}"
+        required
+    ><br><br>
+
+    <button type="submit">
+        Guardar cambios
+    </button>
+
+</form>
+{% endblock %}

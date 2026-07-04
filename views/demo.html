@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+Demo - PawTag
+{% endblock %}
+
+{% block content %}
+
+<h1>Demostración PawTag</h1>
+
+<p>
+    Seleccioná una etiqueta NFC para probar el funcionamiento del sistema.
+</p>
+
+<div class="tags-demo">
+
+    <div class="tag-demo">
+        <a href="/tag/1">
+            <img
+                src="{{ url_for('static', filename='img/nfc.png') }}"
+                alt="Mascota #1">
+        </a>
+        <p>Mascota #1</p>
+    </div>
+
+    <div class="tag-demo">
+        <a href="/tag/2">
+            <img
+                src="{{ url_for('static', filename='img/nfc.png') }}"
+                alt="Mascota #2">
+        </a>
+        <p>Mascota #2</p>
+    </div>
+
+    <div class="tag-demo">
+        <a href="/tag/999">
+            <img
+                src="{{ url_for('static', filename='img/nfc.png') }}"
+                alt="Tag demo">
+        </a>
+
+        {% if tag_demo_registrado %}
+            <p>Mascota #3</p>
+        {% else %}
+            <p class="sin-registrar">PawTag sin registrar</p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+<p style="margin-top:30px;">
+    <a href="/">Volver al inicio</a>
+</p>
+
+{% endblock %}

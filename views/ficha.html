@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}
+{{ mascota.nombre_mascota }}
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ mascota.nombre_mascota }}</h1>
+
+<p>{{ mascota.observaciones }}</p>
+
+    <a href="https://wa.me/{{ mascota.telefono_contacto }}?text={{ mensaje_whatsapp }}">
+    Enviar WhatsApp
+    </a>
+    <br> <br>
+    <a href="/editar/{{ mascota.id }}">
+    Editar datos de mascota
+    </a>
+
+{% endblock %}
+
+
+
+
+

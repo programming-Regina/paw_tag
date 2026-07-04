@@ -1,0 +1,85 @@
+:root {
+    --color-fondo: #ffffff;
+    --color-texto: #000000;
+    --color-borde: #dcdcdc;
+    --color-primario: #000000;
+    --color-primario-hover: #333333;
+    --color-advertencia: #d32f2f;
+}
+
+html {
+    background-color: var(--color-fondo);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 500px;
+    margin: auto;
+    padding: 15px;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.logo {
+    width: 120px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+input,
+textarea,
+button {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+}
+
+textarea {
+    min-height: 120px;
+}
+
+button {
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.tags-demo {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tag-demo {
+    text-align: center;
+}
+
+.tag-demo img {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.tag-demo img:hover {
+    transform: scale(1.05);
+}
+
+.tag-demo p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.sin-registrar {
+    color: var(--color-advertencia);
+    font-weight: bold;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}PawTag{% endblock %}</title>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div>
+        <img class="logo"
+            src="{{ url_for('static', filename='img/Paw_Tag_Logo.png') }}"
+            alt="PawTag">
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>
