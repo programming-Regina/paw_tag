@@ -1,4 +1,6 @@
 :root {
+    color-scheme: light;
+    
     --color-fondo: #ffffff;
     --color-texto: #000000;
     --color-borde: #dcdcdc;
