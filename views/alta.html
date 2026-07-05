@@ -21,7 +21,7 @@ Registrar Mascota
         <strong>Todos los campos son obligatorios.</strong>
     </p>
 
-    <form action="{{ url_for('alta_mascota', id_tag=id_tag) }}" method="POST">
+    <form action="{{ url_for('alta_mascota', id_tag=id_tag) }}" method="POST" novalidate>
 
         <label for="nombre_mascota">
             Nombre
@@ -32,6 +32,7 @@ Registrar Mascota
             id="nombre_mascota"
             name="nombre_mascota"
             placeholder="Nombre de la mascota"
+            value="{{ datos.nombre_mascota if datos else '' }}"
             required
         >
 
@@ -44,10 +45,16 @@ Registrar Mascota
             name="observaciones"
             placeholder="Ej: Es asustadiza, toma medicación, responde a su nombre, puede morder si tiene miedo."
             required
-        ></textarea>
+        >{{ datos.observaciones if datos else '' }}</textarea>
 
         <label for="telefono_contacto">
             Teléfono
+
+            {% if errores and errores.telefono_contacto %}
+            <span class="error-campo">
+                {{ errores.telefono_contacto }}
+            </span>
+            {% endif %}
         </label>
 
         <input
@@ -55,11 +62,19 @@ Registrar Mascota
             id="telefono_contacto"
             name="telefono_contacto"
             placeholder="Ej: 11 1234-5678"
+            value="{{ datos.telefono_contacto if datos else '' }}"
+            class="{% if errores and errores.telefono_contacto %}input-error{% endif %}"
             required
         >
 
         <label for="email_contacto">
             Email
+
+            {% if errores and errores.email_contacto %}
+            <span class="error-campo">
+                {{ errores.email_contacto }}
+            </span>
+            {% endif %}
         </label>
 
         <input
@@ -67,6 +82,8 @@ Registrar Mascota
             id="email_contacto"
             name="email_contacto"
             placeholder="correo@ejemplo.com"
+            value="{{ datos.email_contacto if datos else '' }}"
+            class="{% if errores and errores.email_contacto %}input-error{% endif %}"
             required
         >
 

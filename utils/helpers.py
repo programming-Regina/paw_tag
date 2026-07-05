@@ -82,3 +82,28 @@ def telefono_valido(telefono):
     """
 
     return len(telefono) >= 8
+
+
+
+# =============================================================================
+# OCULTAR EMAIL
+# =============================================================================
+def ocultar_email(email):
+    """
+    Convierte:
+    carlos@gmail.com
+
+    en:
+
+    ca*****@gmail.com
+    """
+
+    usuario, dominio = email.split("@")
+
+    visibles = min(2, len(usuario))
+
+    return (
+        usuario[:visibles]
+        + "*****@"
+        + dominio
+    )

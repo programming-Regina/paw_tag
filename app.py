@@ -8,7 +8,7 @@ from logic.mascota_logic import (
 )
 from urllib.parse import quote
 from flask import request, redirect
-from utils.helpers import limpiar_para_whatsapp
+from utils.helpers import limpiar_para_whatsapp, ocultar_email
 
 app = Flask(__name__, template_folder="views")
 
@@ -72,6 +72,28 @@ def ver_mascota(id_tag):
 
 
 # =============================================================================
+# AVISO DE EDICIÓN
+# =============================================================================
+@app.route("/aviso_edicion/<int:id_mascota>")
+def aviso_edicion(id_mascota):
+
+    mascota = buscar_mascota(id_mascota)
+
+    if mascota is None:
+        return "Mascota no encontrada"
+
+    email_oculto = ocultar_email(
+        mascota["email_contacto"]
+    )
+
+    return render_template(
+        "aviso_edicion.html",
+        mascota=mascota,
+        email_oculto=email_oculto
+    )
+
+
+# =============================================================================
 # REGISTRAR MASCOTA
 # =============================================================================
 @app.route("/alta/<int:id_tag>", methods=["POST"])
@@ -82,13 +104,32 @@ def alta_mascota(id_tag):
     telefono_contacto = request.form["telefono_contacto"]
     email_contacto = request.form["email_contacto"]
 
-    id_generado = registrar_mascota(
-        id_tag,
-        nombre_mascota,
-        observaciones,
-        telefono_contacto,
-        email_contacto
-    )
+    try:
+
+        registrar_mascota(
+            id_tag,
+            nombre_mascota,
+            observaciones,
+            telefono_contacto,
+            email_contacto
+        )
+
+    except ValueError as e:
+
+        errores = {}
+
+        if str(e) == "Teléfono inválido":
+            errores["telefono_contacto"] = str(e)
+
+        elif str(e) == "Email inválido":
+            errores["email_contacto"] = str(e)
+
+        return render_template(
+            "alta.html",
+            id_tag=id_tag,
+            errores=errores,
+            datos=request.form
+        )
 
     if id_tag == 999:
         return redirect("/demo")
@@ -124,13 +165,39 @@ def guardar_edicion(id_tag):
     telefono_contacto = request.form["telefono_contacto"]
     email_contacto = request.form["email_contacto"]
 
-    actualizar_datos_mascota(
-        id_tag,
-        nombre_mascota,
-        observaciones,
-        telefono_contacto,
-        email_contacto
-    )
+    try:
+
+        actualizar_datos_mascota(
+            id_tag,
+            nombre_mascota,
+            observaciones,
+            telefono_contacto,
+            email_contacto
+        )
+
+    except ValueError as e:
+
+        errores = {}
+
+        if str(e) == "Teléfono inválido":
+            errores["telefono_contacto"] = str(e)
+
+        elif str(e) == "Email inválido":
+            errores["email_contacto"] = str(e)
+
+        mascota = {
+            "id": id_tag,
+            "nombre_mascota": nombre_mascota,
+            "observaciones": observaciones,
+            "telefono_contacto": telefono_contacto,
+            "email_contacto": email_contacto
+        }
+
+        return render_template(
+            "editar.html",
+            mascota=mascota,
+            errores=errores
+        )
 
     return redirect(f"/tag/{id_tag}")
 

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Editar Mascota
+{% endblock %}
+
+{% block content %}
+
+<div class="card-mascota">
+
+    <h2>✉️ Enlace de edición</h2>
+
+    <p>
+        En una implementación productiva, se enviaría un enlace de acceso a:
+    </p>
+
+    <div class="observaciones">
+        <p>{{ email_oculto }}</p>
+    </div>
+
+    <p>
+        Únicamente el propietario podría modificar los datos mediante ese enlace.
+    </p>
+
+    <p>
+        Para mantener operativa esta demostración, al presionar
+        <strong>Continuar</strong> se accederá directamente a la pantalla de edición.
+    </p>
+
+    <a
+        href="/editar/{{ mascota.id }}"
+        class="btn btn-outline"
+    >
+        Continuar
+    </a>
+
+</div>
+
+{% endblock %}

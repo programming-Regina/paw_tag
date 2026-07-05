@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 {% extends "base.html" %}
 
 {% block title %}
@@ -8,41 +6,80 @@ Editar Mascota
 
 {% block content %}
 
-<form method="POST" action="/guardar_edicion/{{ mascota.id }}">
+<div class="card-mascota">
 
-    <label>Nombre</label><br>
-    <input
-        type="text"
-        name="nombre_mascota"
-        value="{{ mascota.nombre_mascota }}"
-        required
-    ><br><br>
+    <h2>
+        Editar Mascota
+    </h2>
 
-    <label>Observaciones</label><br>
-    <textarea
-        name="observaciones"
-        required
-    >{{ mascota.observaciones }}</textarea><br><br>
+    <form method="POST" action="/guardar_edicion/{{ mascota.id }}" novalidate>
 
-    <label>Teléfono</label><br>
-    <input
-        type="text"
-        name="telefono_contacto"
-        value="{{ mascota.telefono_contacto }}"
-        required
-    ><br><br>
+        <label for="nombre_mascota">
+            Nombre
+        </label>
 
-    <label>Email</label><br>
-    <input
-        type="email"
-        name="email_contacto"
-        value="{{ mascota.email_contacto }}"
-        required
-    ><br><br>
+        <input
+            type="text"
+            id="nombre_mascota"
+            name="nombre_mascota"
+            value="{{ mascota.nombre_mascota }}"
+            required
+        >
 
-    <button type="submit">
-        Guardar cambios
-    </button>
+        <label for="observaciones">
+            Observaciones
+        </label>
 
-</form>
+        <textarea
+            id="observaciones"
+            name="observaciones"
+            required
+        >{{ mascota.observaciones }}</textarea>
+
+        <label for="telefono_contacto">
+            Teléfono
+
+            {% if errores and errores.telefono_contacto %}
+            <span class="error-campo">
+                {{ errores.telefono_contacto }}
+            </span>
+            {% endif %}
+        </label>
+
+        <input
+            type="text"
+            id="telefono_contacto"
+            name="telefono_contacto"
+            value="{{ mascota.telefono_contacto }}"
+            class="{% if errores and errores.telefono_contacto %}input-error{% endif %}"
+            required
+        >
+
+        <label for="email_contacto">
+            Email
+
+            {% if errores and errores.email_contacto %}
+            <span class="error-campo">
+                {{ errores.email_contacto }}
+            </span>
+            {% endif %}
+        </label>
+
+        <input
+            type="email"
+            id="email_contacto"
+            name="email_contacto"
+            value="{{ mascota.email_contacto }}"
+            class="{% if errores and errores.email_contacto %}input-error{% endif %}"
+            required
+        >
+
+        <button type="submit">
+            Guardar cambios
+        </button>
+
+    </form>
+
+</div>
+
 {% endblock %}
