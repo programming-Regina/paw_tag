@@ -30,11 +30,60 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 https://github.com/user-attachments/assets/84ec4441-870d-4377-ab7c-1b8f0da32232
 
 
+## Arquitectura
+
+PawTag es una aplicación web desarrollada con Python, Flask y MySQL.
+
+```text
+NFC Tag
+    ↓
+Flask
+    ↓
+Lógica de negocio
+    ↓
+MySQL
+```
+
+La aplicación asocia cada tag NFC con un registro único de la base de datos y permite consultar o registrar información de una mascota mediante un teléfono móvil.
+
+
+
+## Base de datos
+
+El proyecto incluye un script de inicialización:
+
+```text
+database/paw_tag.sql
+```
+
+Este archivo crea automáticamente la base de datos, la tabla principal y los datos necesarios para ejecutar la demostración.
+
+
+
+## Datos de prueba
+
+El script SQL incluye dos mascotas de ejemplo:
+
+| Tag NFC | Mascota |
+|----------|----------|
+| 1 | Tina |
+| 2 | Batito |
+
+Además, la demostración utiliza el tag:
+
+| Tag NFC | Estado |
+|----------|----------|
+| 999 | Sin registrar |
+
+El tag `999` permite probar el flujo completo de alta de una nueva mascota.
+
+
+
 ## Objetivo del proyecto
 
-Este proyecto fue desarrollado con fines educativos y de experimentación tecnológica.
+PawTag es un proyecto educativo y de experimentación tecnológica.
 
-Su objetivo es explorar la integración entre hardware NFC, aplicaciones web y bases de datos. No fue diseñado como un producto comercial ni se encuentra destinado a su comercialización.
+Fue desarrollado para explorar la integración entre tags NFC, aplicaciones web y bases de datos utilizando Python, Flask y MySQL. No fue concebido como un producto comercial ni se encuentra orientado a su comercialización.
 
 ## Autor
 
