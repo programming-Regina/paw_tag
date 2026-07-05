@@ -26,7 +26,7 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 
 ## Video demostración
 
-[Ver demostración](docs\pawtag-demo.mp4)
+<video src="docs/pawtag-demo.mp4" controls></video>
 
 ## Objetivo del proyecto
 
