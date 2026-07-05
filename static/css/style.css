@@ -203,3 +203,18 @@ label {
 .input-error {
     border: 2px solid var(--color-advertencia);
 }
+
+.footer-proyecto {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-proyecto a {
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+.footer-proyecto a:hover {
+    text-decoration: underline;
+}
