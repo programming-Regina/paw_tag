@@ -7,6 +7,9 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 - Si el tag no está registrado, se muestra un formulario para cargar los datos de la mascota.
 - Si el tag ya está registrado, se muestra la información de contacto y observaciones relevantes.
 
+## Captura de la ficha de mascota
+<img width="746" height="1600" alt="screenshot" src="https://github.com/user-attachments/assets/e129bf2c-1475-4a87-b2ab-64f50ad9858b" />
+
 
 ## Demostración en línea
 
@@ -33,9 +36,10 @@ https://github.com/user-attachments/assets/74479165-9449-4152-9fbf-4d354c4d9324
 - Python
 - Flask
 - MySQL
-- HTML
-- CSS
+- HTML5
+- CSS3
 - NFC (Near Field Communication)
+- Railway (deploy)
 
 
 
@@ -81,16 +85,11 @@ Este archivo crea automáticamente:
 
 ## Datos de prueba
 
-| Tag NFC | Mascota |
+| Tag NFC | Descripción |
 |----------|----------|
 | 1 | Tina |
 | 2 | Batito |
-
-La demostración también utiliza el siguiente tag:
-
-| Tag NFC | Estado |
-|----------|----------|
-| 999 | Sin registrar |
+| 999 | Tag sin registrar |
 
 El tag `999` permite probar el flujo completo de registro de una nueva mascota.
 
