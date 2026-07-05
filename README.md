@@ -29,7 +29,10 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 
 ## Video demostración
 
-https://github.com/user-attachments/assets/84ec4441-870d-4377-ab7c-1b8f0da32232
+
+
+https://github.com/user-attachments/assets/bb936f62-9d6d-4cba-90c0-4b4b5e00ac3a
+
 
 
 
