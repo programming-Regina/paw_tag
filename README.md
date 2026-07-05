@@ -16,7 +16,7 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 - CSS
 - NFC (Near Field Communication)
 
----
+
 
 ## Flujo de funcionamiento
 
@@ -26,13 +26,12 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 4. Consultar la información almacenada.
 5. Contactar al propietario mediante WhatsApp.
 
----
 
 ## Video demostración
 
 https://github.com/user-attachments/assets/84ec4441-870d-4377-ab7c-1b8f0da32232
 
----
+
 
 ## Arquitectura
 
@@ -48,7 +47,7 @@ MySQL
 
 Cada tag NFC se asocia a un registro único en la base de datos.
 
----
+
 
 ## Base de datos
 
@@ -64,7 +63,7 @@ Este archivo crea automáticamente:
 - La tabla principal.
 - Los datos necesarios para ejecutar la demostración.
 
----
+
 
 ## Datos de prueba
 
@@ -81,7 +80,7 @@ La demostración también utiliza el siguiente tag:
 
 El tag `999` permite probar el flujo completo de registro de una nueva mascota.
 
----
+
 
 ## Consideraciones sobre la demostración
 
@@ -89,7 +88,7 @@ Para simplificar la demostración, esta versión permite editar los datos de una
 
 En una implementación productiva, la edición se realizaría mediante un enlace temporal enviado al correo electrónico registrado del propietario. El enlace contendría un token único para evitar modificaciones por parte de terceros.
 
----
+
 
 ## Objetivo del proyecto
 
@@ -97,7 +96,7 @@ Proyecto desarrollado con fines educativos para explorar la integración entre t
 
 No fue concebido como un producto comercial.
 
----
+
 
 ## Autor
 
