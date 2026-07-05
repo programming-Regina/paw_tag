@@ -8,8 +8,7 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 - Si el tag ya está registrado, se muestra la información de contacto y observaciones relevantes.
 
 ## Captura de la ficha de mascota
-<img width="746" height="1600" alt="screenshot" src="https://github.com/user-attachments/assets/e129bf2c-1475-4a87-b2ab-64f50ad9858b" />
-
+<img height="700" alt="screenshot" src="https://github.com/user-attachments/assets/c0f8cd4e-4873-4927-b81b-1a64d575f52a" />
 
 ## Demostración en línea
 
