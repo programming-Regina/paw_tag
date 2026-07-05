@@ -14,16 +14,15 @@ from config import (
 # CONEXION CON LA BD
 # =============================================================================
 def conectar_bd():
-    """
-    PROPÓSITO: Establece y gestiona la conexión inicial con el motor de base de datos local.
-    CODER: Regina
-    PARÁMETROS: 
-        Ninguno. Usa constantes locales para los parámetros de XAMPP (Puerto 3306).
-    RETORNO:     
-        :return: Objeto mysql.connector.connection si el enlace es exitoso, o None si falla.
-    ERRORES: Captura excepciones de tipo mysql.connector.Error para evitar caídas del sistema.
-    """
+
+    print("===================================")
+    print("HOST:", DB_HOST)
+    print("USER:", DB_USER)
+    print("DB:", DB_NAME)
+    print("PORT:", DB_PORT)
+
     try:
+
         conexion = mysql.connector.connect(
             host=DB_HOST,
             user=DB_USER,
@@ -32,12 +31,13 @@ def conectar_bd():
             port=DB_PORT,
             charset="utf8mb4"
         )
-        
+
         if conexion.is_connected():
+            print("CONEXION MYSQL OK")
             return conexion
 
     except Error as e:
-        print(f"Error al conectar a la base de datos: {e}")
+        print(f"ERROR MYSQL: {e}")
         return None
     
 
