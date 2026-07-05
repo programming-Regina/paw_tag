@@ -7,6 +7,27 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 - Si el tag no está registrado, se muestra un formulario para cargar los datos de la mascota.
 - Si el tag ya está registrado, se muestra la información de contacto y observaciones relevantes.
 
+
+## Demostración en línea
+
+🔗 https://pawtag-production-8fca.up.railway.app
+
+#### Abrir la demostración desde el celular
+Escaneá el código QR para acceder directamente a la aplicación:
+
+<img width="400" height="400" alt="QR_PawTag" src="https://github.com/user-attachments/assets/7014d8f1-95cf-4f43-8922-6e5deec4bf88" />
+
+
+> Esta es una demostración pública. No utilice información personal real al realizar pruebas.
+
+
+## Video demostración
+
+
+
+https://github.com/user-attachments/assets/74479165-9449-4152-9fbf-4d354c4d9324
+
+
 ## Tecnologías utilizadas
 
 - Python
@@ -24,17 +45,7 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 2. Abrir la URL asociada al tag.
 3. Registrar la mascota (si corresponde).
 4. Consultar la información almacenada.
-5. Contactar al propietario mediante WhatsApp.
-
-
-## Video demostración
-
-
-
-https://github.com/user-attachments/assets/74479165-9449-4152-9fbf-4d354c4d9324
-
-
-
+5. Contactar al propietario utilizando la información registrada.
 
 ## Arquitectura
 
