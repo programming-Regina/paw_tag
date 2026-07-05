@@ -6,51 +6,61 @@ Demo - PawTag
 
 {% block content %}
 
-<h1>Demostración PawTag</h1>
+<div class="hero">
 
-<p>
-    Seleccioná una etiqueta NFC para probar el funcionamiento del sistema.
-</p>
+    <h2>Demostración de PawTag</h2>
 
-<div class="tags-demo">
+    <p class="hero-texto">
+        Simulá el escaneo de diferentes etiquetas NFC para ver cómo funciona el sistema.
+    </p>
 
-    <div class="tag-demo">
-        <a href="/tag/1">
-            <img
-                src="{{ url_for('static', filename='img/nfc.png') }}"
-                alt="Mascota #1">
-        </a>
-        <p>Mascota #1</p>
-    </div>
+</div>
 
-    <div class="tag-demo">
-        <a href="/tag/2">
-            <img
-                src="{{ url_for('static', filename='img/nfc.png') }}"
-                alt="Mascota #2">
-        </a>
-        <p>Mascota #2</p>
-    </div>
+<div class="card-demo">
 
-    <div class="tag-demo">
-        <a href="/tag/999">
-            <img
-                src="{{ url_for('static', filename='img/nfc.png') }}"
-                alt="Tag demo">
-        </a>
+    <div class="tags-demo">
 
-        {% if tag_demo_registrado %}
-            <p>Mascota #3</p>
-        {% else %}
-            <p class="sin-registrar">PawTag sin registrar</p>
-        {% endif %}
+        <div class="tag-demo">
+            <a href="/tag/1">
+                <img
+                    src="{{ url_for('static', filename='img/nfc.png') }}"
+                    alt="Mascota #1">
+            </a>
+            <p>Mascota #1</p>
+        </div>
+
+        <div class="tag-demo">
+            <a href="/tag/2">
+                <img
+                    src="{{ url_for('static', filename='img/nfc.png') }}"
+                    alt="Mascota #2">
+            </a>
+            <p>Mascota #2</p>
+        </div>
+
+        <div class="tag-demo">
+            <a href="/tag/999">
+                <img
+                    src="{{ url_for('static', filename='img/nfc.png') }}"
+                    alt="PawTag demo">
+            </a>
+
+            {% if tag_demo_registrado %}
+                <p>Mascota #3</p>
+            {% else %}
+                <p class="sin-registrar">
+                    Nuevo PawTag
+                </p>
+            {% endif %}
+
+        </div>
 
     </div>
 
 </div>
 
-<p style="margin-top:30px;">
-    <a href="/">Volver al inicio</a>
-</p>
+<a href="/" class="btn btn-outline">
+    Volver al inicio
+</a>
 
 {% endblock %}

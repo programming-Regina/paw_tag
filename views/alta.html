@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% extends "base.html" %}
 
 {% block title %}
@@ -7,25 +6,76 @@ Registrar Mascota
 
 {% block content %}
 
-<form action="{{ url_for('alta_mascota', id_tag=id_tag) }}" method="POST">
-    <h3 class="sin-registrar">PawTag no registrado</h3>
+<div class="card-mascota">
 
-<p>
-    Este tag NFC todavía no está asociado a ninguna mascota.
-    Complete el formulario para registrarla.<br><strong>Todos los campos son obligatorios.</strong>
-</p>
-    <label>Nombre</label><br>
-    <input type="text" name="nombre_mascota" placeholder="Nombre de la mascota" required><br><br>
+    <h2 class="sin-registrar">
+        PawTag sin registrar
+    </h2>
 
-    <label>Observaciones</label><br>
-    <textarea name="observaciones" placeholder="Ej: Es asustadizo, toma medicación, responde a su nombre, puede morder si tiene miedo." required></textarea><br><br>
+    <p>
+        Este tag NFC todavía no está asociado a ninguna mascota.
+    </p>
 
-    <label>Teléfono</label><br>
-    <input type="text" name="telefono_contacto" placeholder="Ej: 11 1234-5678" required><br><br>
+    <p>
+        Complete el formulario para registrarla.
+        <strong>Todos los campos son obligatorios.</strong>
+    </p>
 
-    <label>Email</label><br>
-    <input type="email" name="email_contacto" placeholder="correo@ejemplo.com" required><br><br>
+    <form action="{{ url_for('alta_mascota', id_tag=id_tag) }}" method="POST">
 
-    <button type="submit">Guardar</button>
-</form>
+        <label for="nombre_mascota">
+            Nombre
+        </label>
+
+        <input
+            type="text"
+            id="nombre_mascota"
+            name="nombre_mascota"
+            placeholder="Nombre de la mascota"
+            required
+        >
+
+        <label for="observaciones">
+            Observaciones
+        </label>
+
+        <textarea
+            id="observaciones"
+            name="observaciones"
+            placeholder="Ej: Es asustadiza, toma medicación, responde a su nombre, puede morder si tiene miedo."
+            required
+        ></textarea>
+
+        <label for="telefono_contacto">
+            Teléfono
+        </label>
+
+        <input
+            type="text"
+            id="telefono_contacto"
+            name="telefono_contacto"
+            placeholder="Ej: 11 1234-5678"
+            required
+        >
+
+        <label for="email_contacto">
+            Email
+        </label>
+
+        <input
+            type="email"
+            id="email_contacto"
+            name="email_contacto"
+            placeholder="correo@ejemplo.com"
+            required
+        >
+
+        <button type="submit">
+            Registrar mascota
+        </button>
+
+    </form>
+
+</div>
+
 {% endblock %}

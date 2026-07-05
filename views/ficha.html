@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% extends "base.html" %}
 
 {% block title %}
@@ -7,21 +6,35 @@
 
 {% block content %}
 
-<h1>{{ mascota.nombre_mascota }}</h1>
+<div class="card-mascota">
 
-<p>{{ mascota.observaciones }}</p>
+    <h1>{{ mascota.nombre_mascota }}</h1>
 
-    <a href="https://wa.me/{{ mascota.telefono_contacto }}?text={{ mensaje_whatsapp }}">
-    Enviar WhatsApp
+    <div class="observaciones">
+        <h3>Observaciones</h3>
+        <p>{{ mascota.observaciones }}</p>
+    </div>
+
+    <a
+        href="https://wa.me/{{ mascota.telefono_contacto }}?text={{ mensaje_whatsapp }}"
+        class="btn btn-whatsapp"
+    >
+        💬 Enviar WhatsApp
     </a>
-    <br> <br>
-    <a href="/editar/{{ mascota.id }}">
-    Editar datos de mascota
+
+    <a
+        href="/editar/{{ mascota.id }}"
+        class="btn btn-outline"
+    >
+        Editar datos de la mascota
     </a>
+
+        <div class="mensaje-cuidado">
+        🐾 Gracias por cuidar de mí
+    </div>
+
+</div>
+
+
 
 {% endblock %}
-
-
-
-
-
