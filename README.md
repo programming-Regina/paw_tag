@@ -40,4 +40,4 @@ Su objetivo es explorar la integración entre hardware NFC, aplicaciones web y b
 
 **Regina Molares**
 
-[LinkedIn](https://www.linkedin.com/in/regina-molares/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/regina-molares/)
