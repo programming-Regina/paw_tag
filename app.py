@@ -28,6 +28,21 @@ def home():
 def reiniciar_demo():
 
     eliminar_mascota(999)
+    actualizar_datos_mascota(
+        1,
+        "🐶 Tina 🐶",
+        "Castrada. Mansa pero asustadiza. Toma Levotiroxina 0.4 mg al día.",
+        "123456789",
+        "tina@pawtag.demo"
+    )
+
+    actualizar_datos_mascota(
+        2,
+        "🐱 Batito 🐱",
+        "Castrado. Hace pis en las piedritas pero hace 💩 fuera de la bandeja sanitaria. Es manso, cariñoso y sociable.",
+        "987654321",
+        "batito@pawtag.demo"
+    )   
 
     return redirect("/demo")
 
