@@ -30,6 +30,14 @@ def reiniciar_demo():
     eliminar_mascota(999)
     
     actualizar_datos_mascota(
+        1,
+        "🐶 Firulais 🐶",
+        "Castrado. Se roba la comida de la mesa. Manso.",
+        "12345678",
+        "firulais@pawtag.demo"
+    )  
+    
+    actualizar_datos_mascota(
         2,
         "🐱 Batito 🐱",
         "Castrado. Hace pis en las piedritas pero hace 💩 fuera de la bandeja sanitaria. Es manso, cariñoso y sociable.",
@@ -85,9 +93,9 @@ def ver_mascota(id_tag):
 @app.route("/aviso_edicion/<int:id_mascota>")
 def aviso_edicion(id_mascota):
 
-    if id_mascota == 1:
+    # if id_mascota == 1:
         # evita edicion de la chapita de Tina
-        return redirect(f"/tag/{id_mascota}")
+    #    return redirect(f"/tag/{id_mascota}")
 
     mascota = buscar_mascota(id_mascota)
 
