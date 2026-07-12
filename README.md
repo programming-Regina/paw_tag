@@ -17,7 +17,8 @@ El proyecto permite asociar una mascota a un tag NFC físico. Al escanear la cha
 #### Abrir la demostración desde el celular
 Escaneá el código QR para acceder directamente a la aplicación:
 
-<img width="400" height="400" alt="QR_PawTag" src="https://github.com/user-attachments/assets/7014d8f1-95cf-4f43-8922-6e5deec4bf88" />
+<img width="400" height="400" alt="qr-code" src="https://github.com/user-attachments/assets/652217d6-7e36-440d-bf8f-f07a431106b5" />
+
 
 
 > Esta es una demostración pública. No utilice información personal real al realizar pruebas.
